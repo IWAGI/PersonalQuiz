@@ -13,6 +13,10 @@
 		1EBB63B227C3441D00AC7AF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EBB63B027C3441D00AC7AF5 /* Main.storyboard */; };
 		1EBB63B427C3441F00AC7AF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EBB63B327C3441F00AC7AF5 /* Assets.xcassets */; };
 		1EBB63B727C3441F00AC7AF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EBB63B527C3441F00AC7AF5 /* LaunchScreen.storyboard */; };
+		1EBB63C527C35C2F00AC7AF5 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBB63C427C35C2F00AC7AF5 /* Question.swift */; };
+		1EBB63C727C35CFA00AC7AF5 /* ResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBB63C627C35CFA00AC7AF5 /* ResponseType.swift */; };
+		1EBB63C927C35D5300AC7AF5 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBB63C827C35D5300AC7AF5 /* Answer.swift */; };
+		1EBB63CB27C35D8800AC7AF5 /* AnimalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBB63CA27C35D8800AC7AF5 /* AnimalType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		1EBB63B327C3441F00AC7AF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1EBB63B627C3441F00AC7AF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1EBB63B827C3441F00AC7AF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EBB63C427C35C2F00AC7AF5 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		1EBB63C627C35CFA00AC7AF5 /* ResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseType.swift; sourceTree = "<group>"; };
+		1EBB63C827C35D5300AC7AF5 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		1EBB63CA27C35D8800AC7AF5 /* AnimalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,59 @@
 		1EBB63A927C3441D00AC7AF5 /* PersonalQuiz */ = {
 			isa = PBXGroup;
 			children = (
-				1EBB63AA27C3441D00AC7AF5 /* AppDelegate.swift */,
-				1EBB63AC27C3441D00AC7AF5 /* SceneDelegate.swift */,
-				1EBB63AE27C3441D00AC7AF5 /* ViewController.swift */,
-				1EBB63B027C3441D00AC7AF5 /* Main.storyboard */,
-				1EBB63B327C3441F00AC7AF5 /* Assets.xcassets */,
-				1EBB63B527C3441F00AC7AF5 /* LaunchScreen.storyboard */,
-				1EBB63B827C3441F00AC7AF5 /* Info.plist */,
+				1EBB63BF27C34C1800AC7AF5 /* ViewControllers */,
+				1EBB63C327C34C8700AC7AF5 /* Models */,
+				1EBB63C027C34C3100AC7AF5 /* Storyboards */,
+				1EBB63BE27C34B7A00AC7AF5 /* SupportingFiles */,
+				1EBB63C127C34C4500AC7AF5 /* Sources */,
 			);
 			path = PersonalQuiz;
+			sourceTree = "<group>";
+		};
+		1EBB63BE27C34B7A00AC7AF5 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1EBB63AA27C3441D00AC7AF5 /* AppDelegate.swift */,
+				1EBB63AC27C3441D00AC7AF5 /* SceneDelegate.swift */,
+				1EBB63B827C3441F00AC7AF5 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		1EBB63BF27C34C1800AC7AF5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1EBB63AE27C3441D00AC7AF5 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1EBB63C027C34C3100AC7AF5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1EBB63B027C3441D00AC7AF5 /* Main.storyboard */,
+				1EBB63B527C3441F00AC7AF5 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		1EBB63C127C34C4500AC7AF5 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1EBB63B327C3441F00AC7AF5 /* Assets.xcassets */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		1EBB63C327C34C8700AC7AF5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1EBB63C427C35C2F00AC7AF5 /* Question.swift */,
+				1EBB63C627C35CFA00AC7AF5 /* ResponseType.swift */,
+				1EBB63C827C35D5300AC7AF5 /* Answer.swift */,
+				1EBB63CA27C35D8800AC7AF5 /* AnimalType.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +191,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EBB63AF27C3441D00AC7AF5 /* ViewController.swift in Sources */,
+				1EBB63C527C35C2F00AC7AF5 /* Question.swift in Sources */,
 				1EBB63AB27C3441D00AC7AF5 /* AppDelegate.swift in Sources */,
+				1EBB63C927C35D5300AC7AF5 /* Answer.swift in Sources */,
 				1EBB63AD27C3441D00AC7AF5 /* SceneDelegate.swift in Sources */,
+				1EBB63C727C35CFA00AC7AF5 /* ResponseType.swift in Sources */,
+				1EBB63CB27C35D8800AC7AF5 /* AnimalType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,10 +347,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2M4RM4JR8P;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PersonalQuiz/Info.plist;
+				INFOPLIST_FILE = PersonalQuiz/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -306,7 +363,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -319,10 +376,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2M4RM4JR8P;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PersonalQuiz/Info.plist;
+				INFOPLIST_FILE = PersonalQuiz/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -334,7 +392,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
