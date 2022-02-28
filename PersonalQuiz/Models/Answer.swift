@@ -6,7 +6,6 @@
 //
 
 struct Answer {
-    
     let text: String
     let type: AnimalType
 }
