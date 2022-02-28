@@ -99,21 +99,33 @@
                                         <rect key="frame" x="134" y="0.0" width="67" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="singleButtonAnswerPress:" destination="2Ql-hp-Tre" eventType="touchUpInside" id="htJ-65-BLJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTs-sP-R8p">
                                         <rect key="frame" x="134" y="47" width="67" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="singleButtonAnswerPress:" destination="2Ql-hp-Tre" eventType="touchUpInside" id="5tA-r5-N2k"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rTc-24-QU5">
                                         <rect key="frame" x="134" y="94" width="67" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="singleButtonAnswerPress:" destination="2Ql-hp-Tre" eventType="touchUpInside" id="zyn-3U-akE"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chf-WA-yGr">
                                         <rect key="frame" x="134" y="141" width="67" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="singleButtonAnswerPress:" destination="2Ql-hp-Tre" eventType="touchUpInside" id="JxV-WO-mcR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -180,6 +192,9 @@
                                         <rect key="frame" x="0.0" y="188" width="335" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Ответить"/>
+                                        <connections>
+                                            <action selector="multipleButtonAnswerPressed" destination="2Ql-hp-Tre" eventType="touchUpInside" id="aP3-vB-odP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -210,6 +225,9 @@
                                         <rect key="frame" x="0.0" y="82.5" width="335" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Ответить"/>
+                                        <connections>
+                                            <action selector="rangedButtonAnswerPressed" destination="2Ql-hp-Tre" eventType="touchUpInside" id="1wi-rm-m6B"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -245,11 +263,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Вопрос №" id="7bX-fa-MMx">
                         <barButtonItem key="backBarButtonItem" title="Back" id="tA8-LY-sCL"/>
-                        <barButtonItem key="rightBarButtonItem" title="ResultScreen" id="mwU-Xv-fN9">
-                            <connections>
-                                <segue destination="rZ5-rA-4Hc" kind="show" id="qll-tF-Pux"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="multipleStackView" destination="dFD-UH-SuT" id="Cgx-qa-TDx"/>
@@ -345,7 +358,4 @@
             <point key="canvasLocation" x="784.79999999999995" y="51.724137931034484"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="5Rb-Uu-WQ4"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -9,7 +9,7 @@ import UIKit
 
 class QuestionsViewController: UIViewController {
 
-    //MARK: - IB Outlets
+//MARK: - IB Outlets
     
     @IBOutlet weak var questionLabel: UILabel!
     
@@ -30,6 +30,10 @@ class QuestionsViewController: UIViewController {
     
     private let questions = Question.getQuestions()
     private var questionIndex = 0
+    private var answersChoosen: [Answer] = []
+    private var answers: [Answer] {
+        questions[questionIndex].answers
+    }
     
 
     override func viewDidLoad() {
@@ -38,6 +42,33 @@ class QuestionsViewController: UIViewController {
         
     }
     
+//MARK: - IB Actions
+    
+    @IBAction func singleButtonAnswerPressed(_ sender: UIButton) {
+        guard let currentIndexButton = singleButtons.firstIndex(of: sender) else { return }
+        
+        let currentAnswer = answers[currentIndexButton]
+        answersChoosen.append(currentAnswer)
+        nextQuestion()
+    }
+    
+    
+    @IBAction func multipleButtonAnswerPressed() {
+        for (multipleSwitch, answer) in zip(multipleSwitches, answers) {
+            if multipleSwitch.isOn {
+                answersChoosen.append(answer)
+            }
+        }
+        nextQuestion()
+    }
+    
+    @IBAction func rangedButtonAnswerPressed() {
+        let index = lroundf(rangedSlider.value * Float(answers.count - 1))
+        let currentAnswer = answers[index]
+        answersChoosen.append(currentAnswer)
+        
+        nextQuestion()
+    }
 }
 
 //MARK: - Private methods
@@ -47,7 +78,7 @@ extension QuestionsViewController {
     func updateUI() {
         // Hide everything
         for stackView in [singleStackView, multipleStackView, rangedStackView] {
-            stackView?.isHidden.toggle()
+            stackView?.isHidden = true
         }
 //        singleStackView.isHidden.toggle()
 //        multipleStackView.isHidden.toggle()
@@ -67,14 +98,61 @@ extension QuestionsViewController {
         
         //Set navigation title
         title = "Вопрос № \(questionIndex + 1) из \(questions.count)"
+        
+        showCurrentAnswers(for: currentQuestion.type)
     }
     
     private func showCurrentAnswers(for type: ResponseType) {
+                
         switch type {
-        case .single: break
-        case .multiple: break
-        case .ranged: break
+        case .single: showSingleStackView(with: answers)
+        case .multiple: showMultipleStackView(with: answers)
+        case .ranged: showRangedStackView(with: answers)
         }
     }
     
+    /// Setup single stack view.
+    ///
+    /// - Parameter answers: Array with answers.
+    ///
+    /// Description of the method.
+    private func showSingleStackView(with answers: [Answer]) {
+        singleStackView.isHidden = false
+        
+        for (button, answer) in zip(singleButtons, answers) {
+            button.setTitle(answer.text, for: .normal)
+        }
+    }
+    
+    private func showMultipleStackView(with answers: [Answer]) {
+        multipleStackView.isHidden = false
+        
+        for (label, answer) in zip(multipleLabels, answers) {
+            label.text = answer.text
+        }
+    }
+    
+    private func showRangedStackView(with answers: [Answer]) {
+        rangedStackView.isHidden = false
+        
+        rangedLabels.first?.text = answers.first?.text
+        rangedLabels.last?.text = answers.last?.text
+
+    }
+}
+
+//MARK: - Navigation
+
+extension QuestionsViewController {
+    
+    private func nextQuestion() {
+        questionIndex += 1
+        
+        if questionIndex < questions.count {
+            updateUI()
+        } else {
+            performSegue(withIdentifier: "resultSegue", sender: nil)
+        }
+    }
+
 }
